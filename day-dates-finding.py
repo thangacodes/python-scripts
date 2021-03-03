@@ -33,4 +33,11 @@ elif days == '30':
   print("April, June, September, November")
 else:
   print ("Invalid Entry")
-          
+ 
+import datetime
+import time
+days_of_week = ('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday')
+print(days_of_week) # To double check
+for i in days_of_week:
+  print(i)
+
