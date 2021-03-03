@@ -1,3 +1,3 @@
 # Python-scripts
 
-This repository is used to keep all my python works.
+This repository is use to keep all my python script works.
