@@ -9,10 +9,10 @@ def dob_finding():
     time.sleep(5)
     dob =input("Please enter your date of birth: ", )
     dob
-    print("You've entered the dob is:", dob)
+    print("You have entered the dob date is:", dob)
     month_value  = int(dob.split('/')[1])
-    print("you are birth month in number is:", month_value )
-    print("You are born in the month of:", (month_name[month_value -1]))
+    print("your birth month in number is:", month_value )
+    print("Your born in the month of:", (month_name[month_value -1]))
 dob_finding()
 
 ## Takeaway is, using split function, we can split dob date into '/' and then we can use that split variable in the last. If we use minus of date of split, it fullfil our requirements..
