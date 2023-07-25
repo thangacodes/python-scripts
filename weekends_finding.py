@@ -1,10 +1,10 @@
 import time 
-print("Finding only weekend days in the given list")
+print("Identifying only weekend days from the given list...")
 weekends=["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
 for w in weekends:
     print(w)
 time.sleep(2)
-print("Only when weekends found by Python script")
+print("Weekends can only be detected by Python Scripts...")
 weekends=["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
 for w in weekends:
     if w == "saturday" or w == "sunday":
