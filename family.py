@@ -1,0 +1,15 @@
+import time
+def my_family():
+    print("This is just intro about my daughter via Python Script ")
+    name = input("Please enter your name: ")
+    print("Your name is as:", name)
+    age = (input("How old are you: "))
+    print("Your age is:", age)
+    dob = (input("What is your DOB: "))
+    print("Your date of birth is:", dob)
+    dad=input("Enter your daddy name please: ")
+    print("Your daddy name is:", dad)
+    mom=input("Enter your mummy name please: ")
+    print("Your mummy name is:", mom)
+time.sleep(2)
+my_family()
