@@ -14,7 +14,7 @@ def calculate(num1,num2,oper):
     elif oper == '/':
         result = num1 / num2
     elif oper == '^':
-        result = num1 ** num2ss
+        result = num1 ** num2
     return result
 result=calculate(num1,num2,oper)
 print(result)
