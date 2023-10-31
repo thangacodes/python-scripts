@@ -1,0 +1,6 @@
+print("How old are you? :")
+current_year = int(input("Please enter the current year: "))
+birth_year = int(input("What year you were born: ")) 
+user_age = int(current_year - birth_year)
+print(user_age)
+print(f"You are {user_age} years old")
