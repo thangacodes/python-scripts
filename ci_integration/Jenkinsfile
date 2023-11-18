@@ -13,22 +13,22 @@ pipeline {
             steps{
                 sh '''
                 cd boto3_scripts
-		        python3 -m venv keypair
+	        python3 -m venv keypair
                 echo "Activating Venv in this machine..."
                 source keypair/bin/activate
-		        pip install boto3
+		pip install boto3
                 python3 create_keypair.py
-		        sleep 10
-		        deactivate
+		sleep 10
+		deactivate
             '''
             }
         }
-	    stage('Workspace Cleanup'){
-	        steps{
-	            sh '''
+	stage('Workspace Cleanup'){
+	   steps{
+	       sh '''
                     echo "Going to clean Jenkins Workspace"
                     cleanWs()
-	            '''
+	        '''
             }
         }
     }
