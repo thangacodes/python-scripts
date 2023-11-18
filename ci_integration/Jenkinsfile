@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('git checkout') {
+            steps {
+                echo 'Code cloing in progress'
+                sh '''
+                git clone https://github.com/thangacodes/python-scripts.git
+                '''
+            }
+        }
+        stage('keypair_rotation'){
+            steps{
+                sh '''
+                cd boto3_scripts
+                python3 create_keypair.py
+                '''
+            }
+        }
+    }
+}
+
