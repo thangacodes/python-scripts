@@ -13,10 +13,22 @@ pipeline {
             steps{
                 sh '''
                 cd boto3_scripts
+		python3 -m venv keypair
+                echo "Activating Venv in this machine..."
+                source keypair/bin/activate
                 python3 create_keypair.py
+		sleep 10
+		deactivate
                 '''
             }
         }
+	stage('Workspace Cleanup'){
+	steps{
+	   sh '''
+	      cleanWs()
+	      '''
+	      }
     }
+}
 }
 
