@@ -26,10 +26,8 @@ pipeline {
         }
 	stage('Workspace Cleanup'){
 	   steps{
-	       sh '''
-                    echo "Going to clean Jenkins Workspace"
-                    cleanWs()
-	        '''
+               sh 'echo "Going to clean Jenkins Workspace"'
+               cleanWs()
             }
         }
     }
