@@ -22,6 +22,6 @@ response = ec2.create_key_pair(KeyName=keyname)
 # # Save the private key to a file (you can change the path as needed)
 key_path = f"{key_location}{keyname}"
 print(f"The private key path is: {key_path}")
-with open(key_path, 'wb') as key_file:
+with open(key_path, 'w') as key_file:
     key_file.write(response['KeyMaterial'])
 print(f"Keypair {keyname} is created in the {region_name} region. Private key is saved to {key_path}")
