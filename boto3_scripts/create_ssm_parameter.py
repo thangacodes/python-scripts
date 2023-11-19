@@ -7,8 +7,8 @@ import json
 param_name = "cisx.me.example.com"
 region_name = "ap-south-1"
 
-print(f"Stored param name is {param_name}")
-print(f"The region is {region_name}")
+print(f"String param name is: {param_name}")
+print(f"The region is: {region_name}")
 
 ssm_client = boto3.client('ssm', region_name=region_name)
 new_string_parameter= ssm_client.put_parameter(
