@@ -27,7 +27,7 @@ print(f"The private keypath is: {key_path}")
 with open(key_path, 'w') as key_file:
     key_file.write(response['KeyMaterial'])
 
-#print(response) // To see entire response
+#print(response) // To see entire JSON_PAYLOAD response
 
 print(f"The SSH_KEY is: {response['KeyName']} created.")
 print(f"The KEYPAIR_ID is: {response['KeyPairId']}.")
