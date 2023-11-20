@@ -1,9 +1,15 @@
-print(f"Going to delete the string param {param_name}")
 import boto3
-param_name = "cisx.me.example.com"
+import json
+import requests
+
+param_name = "create_string_param.example.com"
 region_name = "ap-south-1"
+
+print(f"Going to delete the string param {param_name}")
 
 ssm_client = boto3.client("ssm", region_name=region_name)
 delete_response = ssm_client.delete_parameter(Name=param_name)
-print(delete_response)
 
+#print(delete_response)
+
+print(f"Deleting the string_param is: {param_name} and the request_id is: {delete_response['ResponseMetadata']['RequestId']} and HTTP response_code is: {delete_response['ResponseMetadata']['HTTPStatusCode']}")
