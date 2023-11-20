@@ -10,6 +10,8 @@ print(f"Going to delete the string param {param_name}")
 ssm_client = boto3.client("ssm", region_name=region_name)
 delete_response = ssm_client.delete_parameter(Name=param_name)
 
-#print(delete_response)
+#print(delete_response) //To see entire JSON_PAYLOAD response
 
-print(f"Deleting the string_param is: {param_name} and the request_id is: {delete_response['ResponseMetadata']['RequestId']} and HTTP response_code is: {delete_response['ResponseMetadata']['HTTPStatusCode']}")
+print(f"DELETING the string_param is: {param_name}.")
+print(f"The REQUEST_ID is: {delete_response['ResponseMetadata']['RequestId']}.")
+print(f"The HTTP RESPONSE_CODE is: {delete_response['ResponseMetadata']['HTTPStatusCode']}.")

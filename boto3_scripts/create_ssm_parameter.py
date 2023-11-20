@@ -3,9 +3,8 @@ import os
 import time
 import sys
 import json
-import requests
 
-param_name = "test_string_param_create.example.com"
+param_name = "create_string_param.example.com"
 region_name = "ap-south-1"
 
 print(f"Stored param name is {param_name}")
@@ -18,8 +17,11 @@ new_string_parameter= ssm_client.put_parameter(
         Overwrite = True,
         Tier = 'Standard',
         Value = 'login1-2')
-#print(new_string_parameter)
 
-print(f"The string param Tier is: {new_string_parameter['Tier']} and the request_id is: {new_string_parameter['ResponseMetadata']['RequestId']} and http_status_code is: {new_string_parameter['ResponseMetadata']['HTTPStatusCode']} and connection_state is: {new_string_parameter['ResponseMetadata']['HTTPHeaders']['connection']}")
+#print(new_string_parameter) // To see entire JSON_PAYLOAD response
 
+print(f"The string parameter '{param_name}' TIER is: {new_string_parameter['Tier']}.")
+print(f"The REQUEST_ID is: {new_string_parameter['ResponseMetadata']['RequestId']}.")
+print(f"The HTTP_STATUS_CODE is: {new_string_parameter['ResponseMetadata']['HTTPStatusCode']}.")
+print(f" CONNECTION_STATE is: {new_string_parameter['ResponseMetadata']['HTTPHeaders']['connection']}.")
 
