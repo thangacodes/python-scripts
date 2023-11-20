@@ -1,6 +1,8 @@
 import boto3
 import os
 import time
+import json
+import requests
 ## variables substituting
 keyname = 'poc-dev.pem'
 region_name = 'ap-south-1'
