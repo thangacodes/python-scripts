@@ -1,0 +1,7 @@
+print(f"Program to encode/decode the string using python")
+user_input = input("Please enter your name: ")
+print(f"The user entered input is: {user_input}")
+encoded_string = user_input.encode("utf-8")
+print(f"The encoded string value is: {encoded_string}")
+decoded_string = encoded_string.decode("utf-8")
+print(f"The decoded string value is: {decoded_string}")
