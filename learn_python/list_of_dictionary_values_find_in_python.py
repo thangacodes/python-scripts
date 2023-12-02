@@ -1,9 +1,3 @@
-import time
-import os
-import sys
-import argparse
-import json
-
 print(f"This is going to be list of dictionary in python to find out specific application details....\n")
 print("###############################################################################################\n")
 
