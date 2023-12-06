@@ -9,7 +9,7 @@ import requests
 keyname       = "td.pem"
 region_name   = "ap-south-1"
 key_location  = "/home/ec2-user/td.pem"
-param_name    = "demo.aws.example.demo.privatekey"
+param_name    = "demo.aws.example.privatekey"
 
 ## Create an EC2 client for the specified region
 ec2 = boto3.client('ec2', region_name=region_name)
