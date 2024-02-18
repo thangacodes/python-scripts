@@ -1,10 +1,10 @@
 import subprocess
 from datetime import datetime, timedelta
 import sys
-existing_key = sys.argv[1]
-new_key = sys.argv[2]
+existing_key         = sys.argv[1]
+new_key              = sys.argv[2]
 def check_keypair_age(existing_key, new_key):
-    aws_cli_command = "aws ec2 describe-key-pairs --key-names {} --query 'KeyPairs[*].CreateTime' --output text".format(
+    aws_cli_command  = "aws ec2 describe-key-pairs --key-names {} --query 'KeyPairs[*].CreateTime' --output text".format(
         existing_key)
     try:
         key_creation_time_str = subprocess.check_output(
