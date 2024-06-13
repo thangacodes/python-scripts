@@ -1,0 +1,3 @@
+s3-terraform-bucket-store
+gitops-storage-bucket
+thangadurai-murugan-13062024
