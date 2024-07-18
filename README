@@ -1,0 +1,28 @@
+# Python
+
+This repository is used to keep all my Python scripts working.
+
+a) Boto3_Scripts
+b) General Python programs
+c) AWS_CLI scripts
+d) Pyscript
+e) API
+
+File Handling:-
+==============
+"r" - Read - Default value. Opens a file for reading, error if the file does not exist.
+"a" - Append - Opens a file for appending, creates the file if it does not exist
+"w" - Write - Opens a file for writing, creates the file if it does not exist.
+"x" - Create - Creates the specified file, returns an error if the file exists.
+
+Pyscript:-
+==========
+PyScript allows us to either embedded Python code in HTML or link to a Python file and the code will run in the browser. We don't need to run Python in backend. PyScript was developed by the Anaconda and make public on April 30 at PyCon US 2022.
+## In order to run a static page or HTML page via Python, use the following steps:-
+1) Create a custom folder named Pyscript.
+2) Create an index.html file and a Python script (example: static.py) 
+3) Execute the command below.
+4) python3 -m http.server or py -m http.server
+
+## If you are using Visual Studio Code, please try to install Live Server extension on it, which will help you to run from the program page itself.
+## Note: Creating a folder and keeping file names for HTML pages and Python scripts is user choice; you keep whatever you feel to keep! No restriction.
