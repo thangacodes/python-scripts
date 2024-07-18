@@ -2,7 +2,7 @@ import time
 countries = ["india", "brazil","dubai","usa","uk","india","dubai"]
 print(countries)
 if "dubai" in countries:
-    print(f"found dubai in the {countries} list")
+    print(f"found dubai in the list")
 else:
     print("not found!")
 time.sleep(3)
