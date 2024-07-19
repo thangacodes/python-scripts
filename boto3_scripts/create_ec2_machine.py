@@ -45,6 +45,7 @@ instances = ec2_resource.create_instances(
         }
     ]
 )
+time.sleep(120)
 
 # Print instance details:-
 for instance in instances:
