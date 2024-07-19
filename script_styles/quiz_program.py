@@ -28,7 +28,8 @@ tags = [
     {'Key': 'Name', 'Value': 'Apache-Server'},
     {'Key': 'Owner', 'Value': 'Thangadurai.murugan@example.com'},
     {'Key': 'CreationDate', 'Value': '07/19/2024'},
-    {'Key': 'Environment', 'Value': 'Development'}
+    {'Key': 'Environment', 'Value': 'Development'},
+    {'Key': 'Project', 'Value': 'Black-buck'}
 ]
 
 client = boto3.client('ec2')
