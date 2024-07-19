@@ -1,58 +1,60 @@
-import boto3
-import time
-# Define variables for launching an EC2 instance
-KEY_PAIR_NAME = "practical"
-AMI_ID = "ami-0ec0e125bb6c6e8ec"
-SUBNET_ID = "subnet-e9190a81"
-SECURITY_GROUP_ID = "subnet-01a3ea7e1f72afd59"
-INSTANCE_TYPE = "t2.micro"
-REGION = "ap-south-1"
-USER_DATA = '''
-#!/bin/bash
-sudo yum update -y
-sudo yum install -y tree
-sudo yum install -y httpd
-sudo systemctl start httpd
-sudo systemctl status httpd 
-'''
+    import boto3
+    import time
+    import datetime
+    import rich
+    from rich import print
 
-# Establish the boto3 resource and client for EC2
-ec2_resource = boto3.resource('ec2', region_name= REGION)
-ec2_client = boto3.client('ec2', region_name= REGION)
+    currentDate = datetime.datetime.today()
+    date = currentDate.strftime("%m-%d-%Y")
+    print(f"[italic red]The Script gets executed on: {date}[/italic red]")
 
-# Define tags correctly formatted as separate dictionaries
-tags = [
-    {'Key': 'Name', 'Value': 'Apache-Server'},
-    {'Key': 'Owner', 'Value': 'Thangadurai.murugan@example.com'},
-    {'Key': 'CreationDate', 'Value': '07/19/2024'},
-    {'Key': 'Environment', 'Value': 'Development'}
-]
+    # Variable declaration for launching EC2 machine
+    AMI = "ami-0ec0e125bb6c6e8ec"
+    INSTANCETYPE = "t2.micro"
+    KEYPAIR = "practical"
+    SGP = "sg-0fb1052b659369aa8"
+    SUBNET = "subnet-01a3ea7e1f72afd59"
+    USER_DATA = '''
+    #!/bin/bash
+    sudo yum update -y
+    sudo yum install -y tree
+    sudo yum install -y httpd
+    sudo systemctl start httpd
+    sudo systemctl status httpd 
+    '''
+    # Define tags correctly formatted as separate dictionaries
+    tags = [
+        {'Key': 'Name', 'Value': 'Apache-Server'},
+        {'Key': 'Owner', 'Value': 'Thangadurai.murugan@example.com'},
+        {'Key': 'CreationDate', 'Value': '07/19/2024'},
+        {'Key': 'Environment', 'Value': 'Development'},
+        {'Key': 'Project', 'Value': 'Blackbox-testing'}
+    ]
 
-# Launch EC2 instance with specified parameters and tags
-instances = ec2_resource.create_instances(
-    MinCount=1,
-    MaxCount=1,
-    ImageId=AMI_ID,
-    InstanceType=INSTANCE_TYPE,
-    KeyName=KEY_PAIR_NAME,
-    SecurityGroupIds=[SECURITY_GROUP_ID],
-    SubnetId=SUBNET_ID,
-    UserData=USER_DATA,
-    TagSpecifications=[
+    client = boto3.client('ec2')
+    response = client.run_instances(
+        ImageId=AMI,
+        InstanceType=INSTANCETYPE,
+        KeyName=KEYPAIR,
+        MaxCount=1,
+        MinCount=1,
+        SecurityGroupIds=[SGP],
+        SubnetId=SUBNET,
+        UserData=USER_DATA,
+        TagSpecifications=[
         {
             'ResourceType': 'instance',
             'Tags': tags
         }
     ]
-)
-time.sleep(120)
-
-# Print instance details:-
-for instance in instances:
-    print(f"EC2 instance {instance.id} has been launched and started")
-    print(f"Instance state: {instance.state["Name"]}")
-    print(f"Instance AMI: {instance.image.id}")
-    print(f"Instance platform: {instance.platform}")
-    print(f"Instance type: “{instance.instance_type}")
-    print(f"Public IPv4 address: {instance.public_ip_address}")
-     print(f"Private IPv4 address: {instance.private_ip_address}")
+    )
+    time.sleep(60)
+    for instance in response['Instances']:
+        print(f"[bold red]    #################################### [/bold red]")
+        print(f"[bold blue]   #################################### [/bold blue]")
+        print(f"[bold yellow] #################################### [/bold yellow]")
+        print(f"[bold green]The Instance Id is: {instance['InstanceId']}[/bold green]")
+        print(f"[bold green]The Launch Time is: {instance['LaunchTime']}[/bold green]")
+        print(f"[bold green]The Image Id is: {instance['ImageId']}[/bold green]")
+        print(f"[bold green]The Instance Type is: {instance['InstanceType']}[/bold green]")
+        print(f"[bold green]The Private IP Address is: {instance['PrivateIpAddress']}[/bold green]")
