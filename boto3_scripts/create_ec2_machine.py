@@ -58,3 +58,7 @@
         print(f"[bold green]The Image Id is: {instance['ImageId']}[/bold green]")
         print(f"[bold green]The Instance Type is: {instance['InstanceType']}[/bold green]")
         print(f"[bold green]The Private IP Address is: {instance['PrivateIpAddress']}[/bold green]")
+
+# Please note:- 
+# I used the default virtual private cloud in the Mumbai region to avoid incurring Amazon Web Services charges.        
+# You can run user-data script on the remote machine if it is connected to a public subnet or one that has a route to Internet Gateway.
