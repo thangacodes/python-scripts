@@ -34,9 +34,9 @@ for i in response['Reservations']:
         image_id = instance['ImageId']
         public_ip = instance.get('PublicIpAddress')
 
-        print(f"Instance ID: {instance_id}")
-        print(f"Image ID: {image_id}")
-        print(f"Public IP Address: {public_ip}")
+        print(f"[bold blue] Instance ID: {instance_id} [/bold blue] ")
+        print(f"[bold blue] Image ID: {image_id} [/bold blue] ")
+        print(f"[bold blue] Public IP Address: {public_ip} [/bold blue] ")
 
 ## Please note:
         #) With this boto3 python script, we can easily find out which instances are powered off in AWS.
