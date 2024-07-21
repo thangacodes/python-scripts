@@ -9,25 +9,21 @@ print(f" [bold red] The script is executed on: {todaysdate} [/bold red] ")
 date = todaysdate.strftime("%m-%d-%Y")
 print(f" [bold blue] The script is executed on date: {date} [/bold blue] ")
 
-# Initialize a new session with specified region
-session = boto3.Session(region_name='ap-south-1')
 
 # Create an EC2 resource object using the session
-ec2 = session.resource('ec2')
-
-# Retrieve all volumes in the region
-volume_iterate = ec2.volumes.all()
-
-# Iterate over volumes and print their details
-for volume in volume_iterate:
-    print(f"[italic green] Volume ID: {volume.id} [/italic green]")
-    print(f"[italic green] Volume Size: {volume.size} GiB [/italic green]")
-    print(f"[italic green] Volume State: {volume.state} [/italic green]")
-    print(f"[italic green] Volume Type: {volume.volume_type} [/italic green]")
-    print(f"[italic green] Attachments: {volume.attachments} [/italic green]")
-    print(f"[italic green] Snapshot ID: {volume.snapshot_id} [/italic green]")
-    print(f"[italic green] Availability Zone: {volume.availability_zone} [/italic green]")
-    print(f"[italic green] Encrypted: {volume.encrypted} [/italic green]")
+ec2 = boto3.resource(service_name="ec2",region_name="ap-south-1")
+for each in ec2.volumes.all():
+    print(f" [bold yellow] The ebs volume of all in one form: {each.id, each.state, each.size, each.encrypted, each.tags} [/bold yellow]")
+    time.sleep(2)
+    print(f"Going to show us each value separately....")
+    print(f"[italic green] Volume ID: {each.id} [/italic green]")
+    print(f"[italic green] Volume Size: {each.size} GiB [/italic green]")
+    print(f"[italic green] Volume State: {each.state} [/italic green]")
+    print(f"[italic green] Volume Type: {each.volume_type} [/italic green]")
+    print(f"[italic green] Attachments: {each.attachments} [/italic green]")
+    print(f"[italic green] Snapshot ID: {each.snapshot_id} [/italic green]")
+    print(f"[italic green] Availability Zone: {each.availability_zone} [/italic green]")
+    print(f"[italic green] Encrypted: {each.encrypted} [/italic green]")
 
 ## Please note:
         #) It is intended to find out all the information related to ECS instance volumes.
