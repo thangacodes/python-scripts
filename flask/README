@@ -17,14 +17,22 @@ flask
 
 This is a basic flask app docker container. To run it locally, execute the commands below,
 
-docker build -t pyflask .                                     //To build docker image in the current directory
-docker images                                                //To list out docker images
-docker run -dit --name app -p 80:5000 pyflask               //To run docker container in detached mode
-docker ps                                                  //To check the running container process
-docker stop <CONTAINER_ID>                                //To stop the running container
-docker container prune                                   //To delete stopped container
+# docker build -t pyflask .                                     //To build docker image in the current directory
+# docker images                                                //To list out docker images
+# docker run -dit --name app -p 80:5000 pyflask               //To run docker container in detached mode
+# docker ps                                                  //To check the running container process
+# docker stop <CONTAINER_ID>                                //To stop the running container
+# docker container prune                                   //To delete stopped container
 
-When the container is running, it will be attached to port 80 of the local machine, go to: http://localhost:80 to view the site.
+When the container is running, it will be attached to port 80 of the local machine, go to: http://localhost:80 to view the site. To test all the pages of the flask application,
+
+http://localhost/
+http://localhost/about
+http://localhost/work
+http://localhost/health
+http://localhost/ping
+
 
 Note: Flask, by default, is running on port 5000 of the container, but we mapped to host port 80 to container port 5000.
 
+If you try to view other pages that don't exist in the app.py file, you'll get an error message.
