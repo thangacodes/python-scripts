@@ -1,0 +1,30 @@
+Flask App:-
+===========
+a) Create a Dockerfile with the necessary instructions to build the image.
+b) Ensure you have a requirements.txt listing your Flask dependencies.
+c) Build the Docker image using docker build -t pyflask .
+d) Run the Docker container with docker run -dit --name flaskapp -p 80:5000 pyflask
+e) Access your Flask app at http://localhost:80
+
+Project Tree Structure:-
+========================
+flask
+├── Dockerfile
+├── app.py
+├── requirements.txt
+└── templates
+    └── 404.html
+
+This is a basic flask app docker container. To run it locally, execute the commands below,
+
+docker build -t pyflask .                                     //To build docker image in the current directory
+docker images                                                //To list out docker images
+docker run -dit --name app -p 80:5000 pyflask               //To run docker container in detached mode
+docker ps                                                  //To check the running container process
+docker stop <CONTAINER_ID>                                //To stop the running container
+docker container prune                                   //To delete stopped container
+
+When the container is running, it will be attached to port 80 of the local machine, go to: http://localhost:80 to view the site.
+
+Note: Flask, by default, is running on port 5000 of the container, but we mapped to host port 80 to container port 5000.
+
