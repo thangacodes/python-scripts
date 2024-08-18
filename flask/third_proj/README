@@ -1,4 +1,4 @@
-Flask App:-
+Flask WebApp:-
 ===========
 a) Create a Dockerfile with the necessary instructions to build the image.
 b) Ensure you have a requirements.txt listing your Flask dependencies.
@@ -37,12 +37,12 @@ third_proj
 
 ### This is a basic flask app docker container. To run it locally, execute the commands below,
 
-# docker build -t pyflask .                                     //To build docker image in the current directory
-# docker images                                                //To list out docker images
-# docker run -dit --name app -p 5000:5000 pyflask               //To run docker container in detached mode
-# docker ps                                                  //To check the running container process
-# docker stop <CONTAINER_ID>                                //To stop the running container
-# docker container prune                                   //To delete stopped container
+# docker build -t pyflask .                                        //To build docker image in the current directory
+# docker images                                                   //To list out docker images
+# docker run -dit --name app -p 5000:5000 pyflask                //To run docker container in detached mode
+# docker ps                                                     //To check the running container process
+# docker stop <CONTAINER_ID>                                   //To stop the running container
+# docker container prune                                      //To delete stopped container
 
 ### When the container is running, it will be attached to port 80 of the local machine, go to: http://localhost:5000/ to view the site. 
 To test all the pages of the flask application,
