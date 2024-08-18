@@ -50,6 +50,8 @@ To test all the pages of the flask application,
 URL: http://localhost:5000/
 ERROR_URL: http://localhost:5000/error
 
-Note: Flask, by default, is running on port 5000 of the container, but we mapped to host port 5000 to container port 5000.
+### Flask, by default, is running on port 5000 of the container, but we mapped to host port 5000 to container port 5000.
+  If you try to view other pages that don't exist in the app.py file, you'll get an error message.
 
-If you try to view other pages that don't exist in the app.py file, you'll get an error message.
+### Please note, there is an image build script written in bash that helps us to build a Docker image and run the container of it.
+  It waits for us to do the post-checkouts within 60 seconds, then it will delete the container followed by a stop.
