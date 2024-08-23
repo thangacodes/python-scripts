@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Welcome to the home page!"
+    return render_template('home.html')
 
 @app.route('/health')
 def health():
@@ -20,6 +20,10 @@ def ping():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+@app.route('/pic')
+def leader():
+    return render_template('pic.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
