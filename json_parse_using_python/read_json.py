@@ -5,6 +5,7 @@ print("This python script to read the JSON file contents..\n")
 
 # Use the relative path to the file
 file_path = os.path.join(os.path.dirname(__file__), 'json_data.json')
+print("\n")
 print(f"Would like to see the file_path dir: {file_path}")
 
 try:
