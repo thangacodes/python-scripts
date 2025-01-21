@@ -1,4 +1,5 @@
 import json
+import os
 print("This python script to read the JSON file contents..")
 print("\n")
 with open('json_data.json', 'r') as file:
