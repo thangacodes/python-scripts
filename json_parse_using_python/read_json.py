@@ -1,12 +1,18 @@
 import json
 import os
-print("This python script to read the JSON file contents..")
-print("\n")
-with open('json_data.json', 'r') as file:
-    try:
+
+print("This python script to read the JSON file contents..\n")
+
+# Use the relative path to the file
+file_path = os.path.join(os.path.dirname(__file__), 'json_data.json')
+
+try:
+    with open(file_path, 'r') as file:
         data = json.load(file)
         # Pretty-print JSON with 2 spaces for indentation
         pretty_json = json.dumps(data, indent=2)
         print('Pretty-printed JSON:', pretty_json)
-    except json.JSONDecodeError as e:
-        print("Error decoding JSON:", e)
+except FileNotFoundError as e:
+    print(f"File not found: {file_path}")
+except json.JSONDecodeError as e:
+    print("Error decoding JSON:", e)
