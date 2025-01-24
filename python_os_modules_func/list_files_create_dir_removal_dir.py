@@ -23,8 +23,8 @@ def list_files_in_directory(currentworkingdir):
     for files in listdir_inthe_cwd:
         print(f"File name is: {files}")
 def create_directory():
-# Create a new directory and check if the directory exists
-    user_choice = input("Enter the directory name that you want to create:")
+    # Create a new directory and check if the directory exists
+    user_choice = input("Enter the directory name that you want to create: ")
     print(f"User entered input as: {user_choice}")
     if os.path.exists(user_choice):
         print(f"Already there is a folder name called: {user_choice} is exist, hence cannot be created with the same name")
@@ -35,9 +35,14 @@ def create_directory():
             print(f"Folder {user_choice} creation in progress..")
         except Exception as e:
             print(f"Error: {e}. Please check the current working directory.")
+def create_file():
+    # create a empty file
+    file_creation=open("vedhu.txt", "w")
+    file_creation.close()
+    print("File 'vedhu.txt' is created successfully.")
 def remove_directory():
-# Delete a new directory
-# List files and directories in the current working directory before removing
+    # Delete a new directory
+    # List files and directories in the current working directory before removing
     print("Files and directories in the current working directory: ")
     current_files_and_folders = (os.listdir(os.getcwd()))
     for k in current_files_and_folders:
@@ -51,11 +56,22 @@ def remove_directory():
         return delete_directory
     except OSError as e:
         print(f"Error: {e}. The directory does not exist.")
+def delete_file():
+    # delete the created file
+    user_feed = input("Please enter the file that you want to delete off: ")
+    print(f"User entered the file name as: {user_feed}")
+    if os.path.exists(user_feed):
+        os.remove(user_feed)
+        print(f"File {user_feed} has been deleted successfully.")
+    else:
+        print("The file 'vedhu.txt' does not exist.")
 def main():
     print_execution_time()
     print_hostname()
     print_private_ip()
-    time.sleep(1)     
+    time.sleep(1)   
+    create_file()
+    delete_file()  
     create_directory()
     remove_directory()
 if __name__ == "__main__":
