@@ -27,3 +27,9 @@ jobs:
     - name: Run Python Script
       run: |
         python3 json_parse_using_python/read_json.py
+    - name: Run os module python script
+      run: |
+        python3 python_os_module.py
+
+
+
