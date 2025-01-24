@@ -4,11 +4,11 @@ input, output, environment variables, process management, etc.
 
 The os module has the following set of methods and constants.
 
-os.getcwd()	-Returns the current working directory
-os.listdir()-Returns a list of the names of the entries in a directory
-os.mkdir()	-Creates a directory (with a specified mode)
-os.remove() -Removing a files
-os.rmdir()  -Removing a directory
+os.getcwd()	  -Returns the current working directory
+os.listdir()  -Returns a list of the names of the entries in a directory
+os.mkdir()	  -Creates a directory (with a specified mode)
+os.remove()   -Removing a files
+os.rmdir()    -Removing a directory
 
 Socket Programming in Python:
 Socket programming is a way of connecting two nodes on a network to communicate with each other. 
