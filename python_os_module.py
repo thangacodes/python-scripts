@@ -1,4 +1,8 @@
 import os
+import socket
+import time
+print("Python script to talk to capture OS related module stuff and networking")
+print("\n")
 # Get the current working directory
 current_directory = os.getcwd()
 # Print the current working directory
@@ -28,3 +32,12 @@ except FileExistsError:
     print(f"Folder '{india_dir}' already exists.")
 except Exception as e:
     print(f"Error creating folder: {e}")
+time.sleep(2)
+hostname = socket.gethostname()
+print(f"My lap hostname is: {hostname}")
+mylap_ip = socket.gethostbyname(hostname)
+print(f"My lap ip address is: {mylap_ip}")
+google_ip= socket.gethostbyname('google.com')
+print(f"Here's the google ip: {google_ip}")
+chatgpt_ip = socket.gethostbyname('chatgpt.com')
+print(f"Here's the chatgpt ip address: {chatgpt_ip}")
