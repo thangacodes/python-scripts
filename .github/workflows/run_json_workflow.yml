@@ -34,15 +34,15 @@ jobs:
     - name: Run Python inbuilt os module functions
       run: |
         python3 -c "
-import os
-import time
-import sys
-import socket
-print('Python commands will be executed here...')
-current_working_dir = os.getcwd()
-print(f'You are working on the dir: {current_working_dir}')
-time.sleep(3)
-container_hostname = socket.gethostname()
-print(f'Script executed on the machine hostname is: {container_hostname}')
-print('################### BYE BYE ###################')
-"
+        import os
+        import time
+        import sys
+        import socket
+        print('Python commands will be executed here...')
+        current_working_dir = os.getcwd()
+        print(f'You are working on the dir: {current_working_dir}')
+        time.sleep(3)
+        container_hostname = socket.gethostname()
+        print(f'Script executed on the machine hostname is: {container_hostname}')
+        print('################### BYE BYE ###################')
+        "
