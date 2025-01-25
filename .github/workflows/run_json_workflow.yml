@@ -1,4 +1,5 @@
 name: Run linux and python commands on git container
+
 on:
   push:
     branches:
@@ -6,38 +7,42 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
   run_script:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
     - name: List files (for debugging purposes)
       run: ls -R python_os_modules_func
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
+
     - name: Execute Linux OS commands
       run: |
         echo "Print the Python version and Linux commands execution on the container.."
         python3 --version
         whoami
         pwd
+
     - name: Run Python inbuilt os module functions
       run: |
         python3 -c "
+import os
 import time
 import sys
 import socket
-print("Python commands will be executed here...")
+print('Python commands will be executed here...')
 current_working_dir = os.getcwd()
-print(f"You are working on the dir: {current_working_dir}")
+print(f'You are working on the dir: {current_working_dir}')
 time.sleep(3)
 container_hostname = socket.gethostname()
-print(f"Script executed on the machine hostname is: {container_hostname}")
-print ("################### BYE BYE ###################")
+print(f'Script executed on the machine hostname is: {container_hostname}')
+print('################### BYE BYE ###################')
 "
-
-
-
