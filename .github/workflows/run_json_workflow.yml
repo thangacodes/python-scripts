@@ -18,7 +18,7 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
-    - name: Check Python version
+    - name: Execute Linux OS commands
       run: |
         echo "Print the Python version and Linux commands execution on the container.."
         python3 --version
@@ -27,17 +27,17 @@ jobs:
     - name: Run Python inbuilt os module functions
       run: |
         python3 -c "
-        import time
-        import sys
-        import socket
-        print(f"Python commands will be executed here...")
-        current_working_dir = os.getcwd()
-        print(f"You are working in the dir: {current_working_dir}")
-        time.sleep(3)
-        container_hostname = socket.gethostname()
-        print(f"Script executed on the machine hostname is: {container_hostname}")
-        print ("################### BYE BYE ###################")
-        "
+import time
+import sys
+import socket
+print("Python commands will be executed here...")
+current_working_dir = os.getcwd()
+print(f"You are working on the dir: {current_working_dir}")
+time.sleep(3)
+container_hostname = socket.gethostname()
+print(f"Script executed on the machine hostname is: {container_hostname}")
+print ("################### BYE BYE ###################")
+"
 
 
 
