@@ -37,9 +37,11 @@ def create_directory():
             print(f"Error: {e}. Please check the current working directory.")
 def create_file():
     # create a empty file
-    file_creation=open("vedhu.txt", "w")
+    ask_user = input("print enter the file name that you want to create: ")
+    print(f"user entered the file name as: {ask_user}.txt")
+    file_creation=open(f"{ask_user}.txt", "w")
     file_creation.close()
-    print("File 'vedhu.txt' is created successfully.")
+    print(f"File '{ask_user}.txt' is created successfully.")
 def remove_directory():
     # Delete a new directory
     # List files and directories in the current working directory before removing
@@ -60,11 +62,11 @@ def delete_file():
     # delete the created file
     user_feed = input("Please enter the file that you want to delete off: ")
     print(f"User entered the file name as: {user_feed}")
-    if os.path.exists(user_feed):
-        os.remove(user_feed)
-        print(f"File {user_feed} has been deleted successfully.")
+    if os.path.exists(f"{user_feed}.txt"):
+        os.remove(f"{user_feed}.txt")
+        print(f"File '{user_feed}.txt' has been deleted successfully.")
     else:
-        print("The file 'vedhu.txt' does not exist.")
+        print("The file '{user_feed}.txt' does not exist.")
 def main():
     print_execution_time()
     print_hostname()
