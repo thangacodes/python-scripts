@@ -26,13 +26,24 @@ jobs:
 
     - name: Check Python version
       run: |
-        echo "Print the Python version that has installed on this container.."
+        echo "Print the Python version and Linux commands execution on the container.."
         python3 --version
         whoami
         pwd
-    - name: Run Python Script
+    - name: Run Python inbuilt os module functions
       run: |
-        python3 python_os_modules_func/list_files_create_dir_removal_dir.py
+        python3 -c "
+        import time
+        import sys
+        import socket
+        print(f'Python commands will be executed here...')
+        current_working_dir = os.getcwd()
+        print(f'You are working in the dir: {current_working_dir}')
+        time.sleep(3)
+        container_hostname = socket.gethostname()
+        print(f"Script executed on the machine hostname is: {container_hostname}")
+        print ("################### BYE BYE ###################")
+        "
 
 
 
