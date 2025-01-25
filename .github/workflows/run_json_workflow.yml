@@ -1,5 +1,4 @@
-name: Run JSON Processing Script
-
+name: Run linux and python commands on git container
 on:
   push:
     branches:
@@ -7,23 +6,18 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
   run_script:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
     - name: List files (for debugging purposes)
       run: ls -R python_os_modules_func
-
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
-
     - name: Check Python version
       run: |
         echo "Print the Python version and Linux commands execution on the container.."
@@ -36,9 +30,9 @@ jobs:
         import time
         import sys
         import socket
-        print(f'Python commands will be executed here...')
+        print(f"Python commands will be executed here...")
         current_working_dir = os.getcwd()
-        print(f'You are working in the dir: {current_working_dir}')
+        print(f"You are working in the dir: {current_working_dir}")
         time.sleep(3)
         container_hostname = socket.gethostname()
         print(f"Script executed on the machine hostname is: {container_hostname}")
