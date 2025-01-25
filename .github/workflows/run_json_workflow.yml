@@ -17,19 +17,22 @@ jobs:
       uses: actions/checkout@v3
 
     - name: List files (for debugging purposes)
-      run: ls -R json_parse_using_python
+      run: ls -R python_os_modules_func
 
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
-    
+
+    - name: Check Python version
+      run: |
+        echo "Print the Python version that has installed on this container.."
+        python3 --version
+        whoami
+        pwd
     - name: Run Python Script
       run: |
-        python3 json_parse_using_python/read_json.py
-    - name: Run os module python script
-      run: |
-        python3 python_os_module.py
+        python3 python_os_modules_func/list_files_create_dir_removal_dir.py
 
 
 
