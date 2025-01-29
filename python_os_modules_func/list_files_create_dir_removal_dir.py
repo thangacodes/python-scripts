@@ -48,8 +48,8 @@ def remove_directory():
     print("Files and directories in the current working directory: ")
     current_files_and_folders = (os.listdir(os.getcwd()))
     for k in current_files_and_folders:
-        print(f"Cross checking available files and folders: {k}")
-        time.sleep(3)
+        print(f"Cross checking available files and folders on the dir: {os.getcwd()}: {k}")
+        time.sleep(1)
     user_input = input("Enter the directory name that you want to remove: ")
     print(f"User entered input as: {user_input}")
     try:
