@@ -2,16 +2,21 @@ import datetime
 import os 
 import time
 import socket
+import subprocess
 
 def print_execution_time():
     print("The script was executed on:", datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 def print_hostname():
     comp_hostname=socket.gethostname()
-    print(f"Script executed on the machine hostname is: {comp_hostname}")
+    print(f"Script executed on the machine hostname is: '{comp_hostname}'")
 def print_private_ip():
-    private_ip = socket.gethostbyname('localhost')
-    # Print the private IP address
-    print("The private IP address of the MacBook Pro is:", private_ip)
+    # Command to get the private IP address
+    ipaddress_command = "ipconfig getifaddr en0"
+    try:
+        private_ip = subprocess.check_output(ipaddress_command, shell=True, text=True).strip()
+        print(f"The private IP address of the MacBook Pro is: '{private_ip}'")
+    except subprocess.CalledProcessError as e:
+        print("Error occurred while retrieving the IP address:", e)
     time.sleep(1)
 def print_current_working_dir():
     currentworkingdir=os.getcwd()
@@ -49,12 +54,14 @@ def remove_directory():
     current_files_and_folders = (os.listdir(os.getcwd()))
     for k in current_files_and_folders:
         print(f"Cross checking available files and folders on the dir: {os.getcwd()}: {k}")
-        time.sleep(1)
     user_input = input("Enter the directory name that you want to remove: ")
     print(f"User entered input as: {user_input}")
     try:
         delete_directory = os.rmdir(user_input)
         print(f"Directory {user_input} is deleted successfully..")
+        time.sleep(2)
+        print(f"Once again list out the files and folders on the directory: {os.getcwd()}")
+        subprocess.run(['ls', '-lrt'])
         return delete_directory
     except OSError as e:
         print(f"Error: {e}. The directory does not exist.")
