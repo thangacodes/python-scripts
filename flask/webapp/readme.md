@@ -8,14 +8,14 @@ Required components:
   requirements.txt file
   Bash or shell script required to automate the build and run of the image and container.
 
-Clone the repository
-git clone https://github.com/thangacodes/python-scripts.git
-Navigate to the directory
-cd python-scripts/flask/webapp
-Run the Bash script
-sh script_run.sh
+Clone the repository:
+  git clone https://github.com/thangacodes/python-scripts.git
+Navigate to the directory:
+  cd python-scripts/flask/webapp
+Run the Bash script:
+  sh script_run.sh
 Test the Flask web application locally in browsers such as Chrome, Firefox, or Internet Explorer at:
-http://localhost:5000/
+  http://localhost:5000/
 
 
   
