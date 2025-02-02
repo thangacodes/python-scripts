@@ -17,6 +17,9 @@ Run the Bash script:
 Test the Flask web application locally in browsers such as Chrome, Firefox, or Internet Explorer at:
   http://localhost:5000/
 
+The output should look like the following on the browser side:
+
+![image](https://github.com/user-attachments/assets/9c487904-f07b-4d67-9be9-2ab3a49d4090)
 
   
 
