@@ -19,7 +19,6 @@ Test the Flask web application locally in browsers such as Chrome, Firefox, or I
 
 The output should look like the following on the browser side:
 
-![image](https://github.com/user-attachments/assets/9c487904-f07b-4d67-9be9-2ab3a49d4090)
 
   
 
