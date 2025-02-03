@@ -1,8 +1,4 @@
-import boto3
-import subprocess
-import os
-import time
-
+import boto3, subprocess, os, time
 REGION = "ap-south-1"
 TAG_KEY = "Name"
 TAG_VALUE_PATTERN = "account-index-dev-app-*"
