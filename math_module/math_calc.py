@@ -4,7 +4,7 @@ from math import pi as p, sin as s, cos as c
 
 print("India is my country..")
 print(".....")
-user_input = input("Please enter the name: ")
+user_input = input("Please enter the name in (string): ")
 print(f"My name is: {user_input}")
 # Checking input datatype
 print(f"user entered input datatype is:", type(user_input))
@@ -15,7 +15,7 @@ print(f"User entered number is: {int_number}")
 # Checking input datatype
 print(f"user entered input datatype is:",type(int_number))
 # Convert input to float after getting the input
-float_number = float(input("Please enter the integer number: "))
+float_number = float(input("Please enter the float number: "))
 print(f"User entered number is: {float_number}")
 # Checking input datatype
 print(f"user entered input datatype is:",type(float_number))
