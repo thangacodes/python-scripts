@@ -16,3 +16,12 @@ Step 3: Run the GraphQL Server
 node index.js     //Run the server in Terminal
 
 Then server should be running at http://localhost:4000
+
+Test this API using POSTMAN tool
+Make a POST method in Postman tool,
+URL: http://localhost:4000/
+Method: POST
+Body:
+{
+  "query": "{ hello name age work designation }"
+}
