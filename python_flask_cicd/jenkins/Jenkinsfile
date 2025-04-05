@@ -66,11 +66,23 @@ pipeline {
         success {
             script {
                 slackSend(channel: SLACK_CHANNEL, message: "Build succeeded! :tada:", color: 'good', credentialsId: SLACK_CREDENTIALS)
+            // Send email notification
+            emailext (
+                to: 'td@gmail.com',
+                subject: "Build ${env.BUILD_ID} Succeeded!",
+                body: "The build ${env.BUILD_ID} was successful! :tada:."
+"
+            )
             }
         }
         failure {
             script {
                 slackSend(channel: SLACK_CHANNEL, message: "Build failed! :x:", color: 'danger', credentialsId: SLACK_CREDENTIALS)
+            emailext (
+                to: 'td@gmail.com', 
+                subject: "Build ${env.BUILD_ID} Failed",
+                body: "The build ${env.BUILD_ID} failed!. Please check the console logs."
+            )
             }
         }
         always {
