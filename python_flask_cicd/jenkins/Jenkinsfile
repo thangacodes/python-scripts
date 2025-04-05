@@ -9,12 +9,10 @@ pipeline {
             steps {
                 script {
                     echo "Code checkout begin shortly.."
-                    sh '''
-                    git clone https://github.com/thangacodes/python-scripts.git || { echo 'Git clone failed'; exit 1; }
-                    cd python-scripts/python_flask_cicd || { echo 'Failed to navigate to directory'; exit 1; }
-                    echo "List out the files"
-                    ls -l .
-                    '''
+                    // Using Jenkins default checkout scm
+                    checkout scm
+                    echo "Listing out the files after checkout:"
+                    sh 'ls -l .'
                 }
             }
         }
