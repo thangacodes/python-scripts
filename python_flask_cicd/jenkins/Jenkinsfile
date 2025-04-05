@@ -1,9 +1,12 @@
 pipeline {
     agent any
     environment {
-        IMAGE_NAME = "flaskimage"    //setting docker image value as static
-        APP_PORT = 5000             //setting default flask app port number
-        SCRIPT="python_flask_cicd" //Hardcoding the directory where the python related script exists
+        IMAGE_NAME = "flaskimage"          //setting docker image value as static
+        APP_PORT = 5000                   //setting default flask app port number
+        SCRIPT="python_flask_cicd"       //hardcoding the directory where the python related script exists
+        SLACK_CHANNEL = "jenkins-build" //slack channel here
+        SLACK_CREDENTIALS = "slack"    //slack credentials from Jenkins
+    }
     }
     stages {
         stage('checkoutscm') {
@@ -61,6 +64,16 @@ pipeline {
         }
     }
     post {
+        success {
+            script {
+                slackSend(channel: SLACK_CHANNEL, message: "Build succeeded! :tada:", color: 'good', credentialsId: SLACK_CREDENTIALS)
+            }
+        }
+        failure {
+            script {
+                slackSend(channel: SLACK_CHANNEL, message: "Build failed! :x:", color: 'danger', credentialsId: SLACK_CREDENTIALS)
+            }
+        }
         always {
             echo "Cleaning up Docker containers..."
             sh '''
