@@ -6,18 +6,17 @@ pipeline {
     }
     stages {
         stage('checkoutscm') {
-        steps {
-            script {
-                echo "Code checkout begin shortly.."
-                sh '''
-                git clone https://github.com/thangacodes/python-scripts.git || { echo 'Git clone failed'; exit 1; }
-                cd python-scripts/python_flask_cicd || { echo 'Failed to navigate to directory'; exit 1; }
-                echo "List out the files"
-                ls -l .
-                '''
+            steps {
+                script {
+                    echo "Code checkout begin shortly.."
+                    sh '''
+                    git clone https://github.com/thangacodes/python-scripts.git || { echo 'Git clone failed'; exit 1; }
+                    cd python-scripts/python_flask_cicd || { echo 'Failed to navigate to directory'; exit 1; }
+                    echo "List out the files"
+                    ls -l .
+                    '''
+                }
             }
-        }
-    }
         }
 
         stage('build') {
@@ -72,7 +71,7 @@ pipeline {
             echo "Cleaning up Docker containers..."
             sh '''
             docker ps -q | xargs docker stop || true
-            docker ps -a -q | xargs docker rm || trued
+            docker ps -a -q | xargs docker rm || true
             '''
         }
     }
