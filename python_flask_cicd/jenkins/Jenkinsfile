@@ -12,7 +12,7 @@ pipeline {
                     // Using Jenkins default checkout scm
                     checkout scm
                     echo "Listing out the files after checkout:"
-                    sh 'ls -l .'
+                    sh 'ls -l python_flask_cicd'
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
                 script {
                     echo "Creating necessary files..."
                     sh '''
-                    cd python-scripts/python_flask_cicd
+                    cd python_flask_cicd
                     # Build Docker image
                     docker build -t ${IMAGE_NAME} .
                     '''
