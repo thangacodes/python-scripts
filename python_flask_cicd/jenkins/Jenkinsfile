@@ -7,7 +7,6 @@ pipeline {
         SLACK_CHANNEL = "jenkins-build" //slack channel here
         SLACK_CREDENTIALS = "slack"    //slack credentials from Jenkins
     }
-    }
     stages {
         stage('checkoutscm') {
             steps {
