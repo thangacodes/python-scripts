@@ -70,9 +70,7 @@ pipeline {
             emailext (
                 to: 'td@gmail.com',
                 subject: "Build ${env.BUILD_ID} Succeeded!",
-                body: "The build ${env.BUILD_ID} was successful! :tada:."
-"
-            )
+                body: "The build ${env.BUILD_ID} was successful! :tada:.")
             }
         }
         failure {
@@ -81,8 +79,7 @@ pipeline {
             emailext (
                 to: 'td@gmail.com', 
                 subject: "Build ${env.BUILD_ID} Failed",
-                body: "The build ${env.BUILD_ID} failed!. Please check the console logs."
-            )
+                body: "The build ${env.BUILD_ID} failed!. Please check the console logs.")
             }
         }
         always {
