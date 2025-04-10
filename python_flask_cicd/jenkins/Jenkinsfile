@@ -26,7 +26,7 @@ pipeline {
                     sh '''
                     cd ${SCRIPT}
                     # Build Docker image
-                    docker build -t ${IMAGE_NAME} .
+                    /usr/local/bin/docker build -t ${IMAGE_NAME} .
                     '''
                 }
             }
@@ -37,7 +37,7 @@ pipeline {
                     echo "Running unit tests..."
                     sh '''
                     cd ${SCRIPT}
-                    docker run --rm -v $(pwd):/app -w /app ${IMAGE_NAME} pytest test_app.py
+                    /usr/local/bin/docker run --rm -v $(pwd):/app -w /app ${IMAGE_NAME} pytest test_app.py
                     '''
                 }
             }
@@ -48,7 +48,7 @@ pipeline {
                     echo "Deploying Flask app..."
                     sh '''
                     cd ${SCRIPT}
-                    docker run -d -p ${APP_PORT}:${APP_PORT} ${IMAGE_NAME}
+                    /usr/local/bin/docker run -d -p ${APP_PORT}:${APP_PORT} ${IMAGE_NAME}
                     '''
                 }
             }
@@ -86,11 +86,11 @@ pipeline {
             echo "Cleaning up Docker containers..."
             sh '''
             # Stop running containers
-            docker ps -q | xargs docker stop || true
+            /usr/local/bin/docker ps -q | xargs docker stop || true
             # Remove stopped containers
-            docker ps -a -q | xargs docker rm || true
+            /usr/local/bin/docker ps -a -q | xargs docker rm || true
             # Remove all Docker images
-            docker images -q | xargs docker rmi -f || true
+            /usr/local/bin/docker images -q | xargs docker rmi -f || true
             '''
         }
     }
