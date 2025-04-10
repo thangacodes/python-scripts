@@ -26,8 +26,10 @@ pipeline {
                     echo "Creating necessary files..."
                     sh '''
                     cd ${SCRIPT}
-                    python3 -m venv flask
-                    source flask/bin/activate
+                    echo "Activating Python Virtual env"
+                    python3 -m venv demo
+                    ls -l
+                    source demo/bin/activate
                     # Build Docker image
                     ${DOCKER_PATH} build -t ${IMAGE_NAME} .
                     '''
