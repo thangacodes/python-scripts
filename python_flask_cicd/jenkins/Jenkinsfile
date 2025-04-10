@@ -30,6 +30,8 @@ pipeline {
                     python3 -m venv demo
                     ls -l
                     source demo/bin/activate
+                    echo "Checking virtual env"
+                    echo $VIRTUAL_ENV
                     # Build Docker image
                     ${DOCKER_PATH} build -t ${IMAGE_NAME} .
                     '''
