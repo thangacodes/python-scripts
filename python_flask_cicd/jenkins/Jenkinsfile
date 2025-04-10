@@ -6,6 +6,7 @@ pipeline {
         SCRIPT="python_flask_cicd"       //hardcoding the directory where the python related script exists
         SLACK_CHANNEL = "jenkins-build" //slack channel here
         SLACK_CREDENTIALS = "slack"    //slack credentials from Jenkins
+        DOCKER_PATH ="/usr/local/bin/docker" //Docker executable bin path
     }
     stages {
         stage('checkoutscm') {
@@ -25,8 +26,10 @@ pipeline {
                     echo "Creating necessary files..."
                     sh '''
                     cd ${SCRIPT}
+                    python3 -m venv flask
+                    source flask/bin/activate
                     # Build Docker image
-                    /usr/local/bin/docker build -t ${IMAGE_NAME} .
+                    ${DOCKER_PATH} build -t ${IMAGE_NAME} .
                     '''
                 }
             }
@@ -37,7 +40,7 @@ pipeline {
                     echo "Running unit tests..."
                     sh '''
                     cd ${SCRIPT}
-                    /usr/local/bin/docker run --rm -v $(pwd):/app -w /app ${IMAGE_NAME} pytest test_app.py
+                    ${DOCKER_PATH} run --rm -v $(pwd):/app -w /app ${IMAGE_NAME} pytest test_app.py
                     '''
                 }
             }
@@ -48,7 +51,7 @@ pipeline {
                     echo "Deploying Flask app..."
                     sh '''
                     cd ${SCRIPT}
-                    /usr/local/bin/docker run -d -p ${APP_PORT}:${APP_PORT} ${IMAGE_NAME}
+                    ${DOCKER_PATH} run -d -p ${APP_PORT}:${APP_PORT} ${IMAGE_NAME}
                     '''
                 }
             }
@@ -86,11 +89,11 @@ pipeline {
             echo "Cleaning up Docker containers..."
             sh '''
             # Stop running containers
-            /usr/local/bin/docker ps -q | xargs docker stop || true
+            ${DOCKER_PATH} ps -q | xargs docker stop || true
             # Remove stopped containers
-            /usr/local/bin/docker ps -a -q | xargs docker rm || true
+            ${DOCKER_PATH} ps -a -q | xargs docker rm || true
             # Remove all Docker images
-            /usr/local/bin/docker images -q | xargs docker rmi -f || true
+            ${DOCKER_PATH} images -q | xargs docker rmi -f || true
             '''
         }
     }
