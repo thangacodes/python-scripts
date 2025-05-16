@@ -13,7 +13,7 @@ def deployment(playbook, env, cr):
     click.echo(f"\nYour selection on deployment is: {playbook}\n")
     click.echo(f"\nEnvironment name is: {env}\n")
     click.echo(f"\nChange Number is: {cr}\n")
-    if playbook.lower() == 'go-ahead':
+    if playbook.lower() == 'yes':
         if env.lower() == 'dev':
             playbook_path = os.path.join(os.getcwd(), 'dev.yaml')
             click.echo("DEV deployment will start shortly...")
