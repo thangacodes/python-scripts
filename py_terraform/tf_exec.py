@@ -26,9 +26,8 @@ def files_checking(directory="/Users/eash/Documents/workout/dynamodb"):
 def tf_exec(directory="/Users/eash/Documents/workout/dynamodb"):
     try:
         os.chdir(directory)  # Change working directory
-        user_input = input("\nEnter Terraform commands to run (e.g., init fmt validate plan): ").strip().lower()
+        user_input = input("\nEnter Terraform commands to run (e.g., init fmt validate plan apply destroy): ").strip().lower()
         commands = user_input.split()
-
         valid_commands = {
             "init": ["terraform", "init"],
             "fmt": ["terraform", "fmt"],
