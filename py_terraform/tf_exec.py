@@ -23,7 +23,7 @@ def files_checking(directory="/Users/eash/Documents/workout/dynamodb"):
     return tf_files_found
 
 # Function to execute Terraform commands
-def tf_exec(directory="/Users/tmurugan/Documents/workout/dynamodb"):
+def tf_exec(directory="/Users/eash/Documents/workout/dynamodb"):
     try:
         os.chdir(directory)  # Change working directory
         user_input = input("\nEnter Terraform commands to run (e.g., init fmt validate plan): ").strip().lower()
@@ -54,10 +54,10 @@ if __name__ == "__main__":
         exec_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         print(f"\nScript executed at: {exec_time}")
         print("Script to perform Terraform operations\n")
-        tf_dir = "/Users/tmurugan/Documents/workout/dynamodb"
+        tf_dir = "/Users/eash/Documents/workout/dynamodb"
         if files_checking(tf_dir):  # Proceed only if Terraform files exist
             tf_exec(tf_dir)
         else:
             print("Exiting: No .tf files found.")
-    except Exception as e:
-        print(f"Top-level error: {e}")
+    except Exception as error:
+        print(f"Top-level error: {error}")
