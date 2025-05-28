@@ -6,13 +6,15 @@ Project files and folder structure:
 ├── create_dydb.py
 ├── delete_bucket.py
 ├── delete_dydb.py
-├── inject_data_into_ddb_tables.py
 ├── file_uploade_s3_bucket.py
+├── inject_data_into_ddb_tables.py
+├── readme.md
+├── step_function_workflow.png
 ├── thangam.txt
 ├── unni.txt
 └── view_tables.py
 
-1 directory, 9 files
+0 directories, 11 files
 
 Here's the hierarchy we need to run the Python script on:
 
