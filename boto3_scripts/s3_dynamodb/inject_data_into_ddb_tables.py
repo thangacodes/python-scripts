@@ -4,7 +4,7 @@ import json
 # Variable declaration
 profile      = "vault_admin"
 region       = "ap-south-1"
-bucket       = "gitops-demo-bucket-tf"
+bucket       = "unni-2025-s3-ddb"
 dydb_tables  = ["unni", "thangam"]
 files_to_use = ["unni.txt", "thangam.txt"]
 
