@@ -3,7 +3,7 @@ import boto3
 # Variable declaration
 profile = "vault_admin"
 region  = "ap-south-1"
-bucket  = "gitops-demo-bucket-tf"
+bucket  = "unni-2025-s3-ddb"
 
 # Files to upload
 files_to_upload = ["thangam.txt", "unni.txt"]
