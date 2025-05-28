@@ -36,4 +36,11 @@ aws dynamodb scan --table-name unni --region ap-south-1 --profile vault_admin --
 aws dynamodb scan --table-name thangam --region ap-south-1 --profile vault_admin --output json | jq .
 
 
+# Another method is:
+
+We can architect your current local workflow using AWS Lambda and Step Functions to automate and orchestrate the entire process in a cloud-native, serverless way.
+
+![image](https://github.com/user-attachments/assets/8ec0cfaf-187b-4b06-8d08-901189ea9216)
+
+
 
