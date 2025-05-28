@@ -42,6 +42,12 @@ aws dynamodb scan --table-name thangam --region ap-south-1 --profile vault_admin
 
 We can architect your current local workflow using AWS Lambda and Step Functions to automate and orchestrate the entire process in a cloud-native, serverless way.
 
+Step Function Workflow:
+
+[create_bucket] → [create_dydb] → [file_uploade_s3_bucket] 
+→ [inject_data_into_ddb_tables] → [view_tables] 
+→ [delete_dydb] → [delete_bucket]
+
 Attached is the entire workflow for the Step Functions.
 
 
