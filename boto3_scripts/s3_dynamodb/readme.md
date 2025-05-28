@@ -1,20 +1,18 @@
 ```bash
 
 Project files and folder structure:
-
-tree
 .
 ├── create_bucket.py
 ├── create_dydb.py
+├── delete_bucket.py
 ├── delete_dydb.py
 ├── inject_data_into_ddb_tables.py
 ├── file_uploade_s3_bucket.py
 ├── thangam.txt
 ├── unni.txt
-└── view_scan_tables.py
+└── view_tables.py
 
-1 directory, 8 files
-
+1 directory, 9 files
 
 Here's the hierarchy we need to run the Python script on:
 
