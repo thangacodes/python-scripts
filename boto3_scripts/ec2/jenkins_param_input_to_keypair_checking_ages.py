@@ -25,7 +25,5 @@ def check_keypair_age(existing_key, new_key):
             print("Key {} has been created within the last 90 days.".format(existing_key))
     except subprocess.CalledProcessError as e:
         print("Error executing AWS CLI command: {}".format(e.output))
-
-
 # Example usage
 check_keypair_age(existing_key, new_key)

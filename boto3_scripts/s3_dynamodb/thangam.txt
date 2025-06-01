@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "name": "eashwari",
+      "age": "39",
+      "place": "bangalore"
+    },
+    {
+      "name": "thangam",
+      "age": "35",
+      "place": "bangalore"
+    }
+  ]
+}

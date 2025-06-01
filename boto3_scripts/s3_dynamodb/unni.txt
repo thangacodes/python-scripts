@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "name": "unni",
+      "age": "39",
+      "place": "kerala"
+    },
+    {
+      "name": "vijay",
+      "age": "39",
+      "place": "kerala"
+    }
+  ]
+}
