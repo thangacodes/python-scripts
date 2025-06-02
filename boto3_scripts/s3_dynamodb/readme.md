@@ -40,7 +40,8 @@ aws dynamodb scan --table-name thangam --region ap-south-1 --profile vault_admin
 
 # Another method is:
 
-We can architect your current local workflow using AWS Lambda and Step Functions to automate and orchestrate the entire process in a cloud-native, serverless way.
+We can architect the entire workflow using AWS Lambda and Step Functions to automate and orchestrate the process in a cloud-native,
+serverless way.
 
 Step Function Workflow:
 
