@@ -4,7 +4,7 @@
   Check the Tk version, create a file called tk_version.py:
   
   ```bash
-  # tk_version.py
+  # tk_version.py    #file name
   import tkinter
   print(tkinter.TkVersion)
   $ python3 tk_version.py 
@@ -19,6 +19,8 @@
 # Tkinter Program Output:
 
 [corp-helpdesk](https://github.com/thangacodes/python-scripts/blob/main/tkinter/outputs/itbot_console.png)
+
+[it-helpdesk-enhanced](https://github.com/thangacodes/python-scripts/blob/main/tkinter/outputs/enhanced_ithelpdesk.png)
 
 [terra-console](https://github.com/thangacodes/python-scripts/blob/main/tkinter/outputs/console.png)
 
