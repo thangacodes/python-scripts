@@ -9,5 +9,5 @@ The tkinter package (“Tk interface”) is the standard Python interface to the
 
 # Console Output
 
-![program-console](https://raw.githubusercontent.com/thangacodes/python-scripts/main/tkinter/console.png)
+[program-console](https://raw.githubusercontent.com/thangacodes/python-scripts/main/tkinter/console.png)
 
