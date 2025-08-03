@@ -7,7 +7,7 @@ The tkinter package (“Tk interface”) is the standard Python interface to the
 Tk - Tool Kit
 inter - Interface
 
-# Console Output
+# Console:
 
 [program-console](https://raw.githubusercontent.com/thangacodes/python-scripts/main/tkinter/console.png)
 
