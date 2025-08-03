@@ -18,9 +18,9 @@
 
 # Tkinter Program Output:
 
+[corp-helpdesk](https://github.com/thangacodes/python-scripts/blob/main/tkinter/outputs/itbot_console.png)
+
 [terra-console](https://github.com/thangacodes/python-scripts/blob/main/tkinter/outputs/console.png)
 
-[scrolled-ui](https://github.com/thangacodes/python-scripts/blob/main/tkinter/outputs/itbot_console.png)
-
-[corp-it-bot](https://github.com/thangacodes/python-scripts/blob/main/tkinter/outputs/scrolled_down_ui.png)
+[scrolled-ui](https://github.com/thangacodes/python-scripts/blob/main/tkinter/outputs/scrolled_down_ui.png)
 
