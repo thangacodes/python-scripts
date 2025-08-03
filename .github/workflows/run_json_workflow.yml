@@ -3,10 +3,10 @@ name: Run linux and python commands on git container
 on:
   push:
     branches:
-      - main
+      - dev
   pull_request:
     branches:
-      - main
+      - dev
 
 jobs:
   run_script:
