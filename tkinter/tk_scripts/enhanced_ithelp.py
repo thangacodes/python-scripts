@@ -10,13 +10,11 @@ def FuncSendText():
     global greeted
     UserInput = InputText.get("1.0", END).strip().lower()
     DisplayText.config(state=NORMAL)
-
     # Show welcome message only once
     if not greeted:
         DisplayText.insert(END, "Bot: Welcome to IT HelpDesk. How can I help you?\n", "bot")
         greeted = True
     DisplayText.insert(END, "You: " + UserInput + "\n", "user")
-
     # Show keyword suggestions if input is empty or contains 'help'
     if UserInput == "" or UserInput == "help":
         DisplayText.insert(END, "Bot: Please select from the following issues:\n", "bot")
@@ -45,21 +43,20 @@ def FuncSendText():
     # Fallback
     else:
         DisplayText.insert(END, "Bot: Please specify the exact issue or type 'help' to see options.\n", "bot")
-
     DisplayText.config(state=DISABLED)
     InputText.delete("1.0", END)
 
 # Logic begins
 botpage = Tk()
-botpage.title("My First Python Bot")
+botpage.title("HelpDesk ChatBot")
 botpage.geometry("550x550")
 
 # Title label inside the window with styling
-bot_label = Label(botpage, text="ChatBot Via Python", font=('Calibri', 14, 'bold'))
+bot_label = Label(botpage, text="HelpDesk ChatBot", font=('Calibri', 14, 'bold'))
 bot_label.pack(pady=10)
 
 ## App Header section
-AppHeader = Label(botpage, text="First ChatBot", bg="dark blue", fg="white", font=("Calibri", 14, "bold"))
+AppHeader = Label(botpage, text="Welcome to IT HelpDesk", bg="dark blue", fg="white", font=("Calibri", 14, "bold"))
 AppHeader.pack(fill=X, expand=True)
 
 DisplayText = scrolledtext.ScrolledText(botpage,state=DISABLED,wrap=WORD)
