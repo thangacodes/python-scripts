@@ -42,7 +42,7 @@ def func_get_weather():
 wpage = tkinter.Tk()
 wpage.geometry("850x850")
 wpage.title("Weather App")
-image_path   = "/Users/tmurugan/Desktop/weather-image.png"
+image_path   = "/Users/durai/Desktop/weather-image.png"
 bg_image     = PhotoImage(file=image_path)
 set_bg_image = tkinter.Label(wpage,image=bg_image)
 set_bg_image.place(relheight=1,relwidth=1)
