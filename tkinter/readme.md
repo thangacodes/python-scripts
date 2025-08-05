@@ -12,9 +12,10 @@
   ```
 # Abbreviation:
 
+  ```bash
   * Tk - Toolkit
-
   * inter - Interface
+  ```
 
 # Tkinter Program Output:
 
