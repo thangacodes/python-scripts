@@ -7,6 +7,7 @@ Folder Structure:
 ├── flask_api_check.py
 ├── generate_api.py
 ├── readme.md
+├── requirements.txt
 └── tkinter_app.py
 
 ```
