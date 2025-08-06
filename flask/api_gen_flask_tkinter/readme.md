@@ -28,7 +28,10 @@ How to Clone and Run This Project:
 
 Note: The requirements.txt file contains flask, requests with spcific version.
 
-4. Run the Flask App and Tkinter app in different terminal
+4. Generate Your API Key
+   python3 generate_api.py
+
+5. Run the Flask App and Tkinter app in different terminal
    python3 flask_app.py && python3 tkinter_app.py
 
 ```
