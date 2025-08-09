@@ -11,3 +11,4 @@ $  => Ends with
 ?  => Zero or one occurance
 {} => Get number of characters or occurances
 |  => Either or
+```
