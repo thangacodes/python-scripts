@@ -11,6 +11,7 @@
   learn_python
   math_module
   online_shop
+  pandas
   py_terraform
   pyscript
   python_flask_cicd
